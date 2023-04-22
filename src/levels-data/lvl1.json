@@ -1,0 +1,9 @@
+{
+    "level": 1,
+    "name": "Paris intramuros",
+    "start_loc": [48.858, 2.343],
+    "zoom": 12,
+    "random_box_size_lat": 0.039,
+    "random_box_size_lon": 0.060,
+    "is_country": false
+}
