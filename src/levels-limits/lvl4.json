@@ -1,9 +1,0 @@
-{
-    "level": 4,
-    "name": "France",
-    "start_loc": [46.7, 1.43027],
-    "zoom": 5,
-    "random_box_size_lat": 4.6,
-    "random_box_size_lon": 7.0,
-    "is_country": true
-}

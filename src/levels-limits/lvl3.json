@@ -1,9 +1,0 @@
-{
-    "level": 3,
-    "name": "Ile-de-France",
-    "start_loc": [48.864716, 2.349014],
-    "zoom": 9,
-    "random_box_size_lat": 0.6,
-    "random_box_size_lon": 1.0,
-    "is_country": false
-}
