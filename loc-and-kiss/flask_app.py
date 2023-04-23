@@ -14,28 +14,29 @@
 
 """
 
-from flask import Flask, render_template_string
+from flask import Flask, render_template
 import services
 import folium
 import read_src
 
 app = Flask(__name__)
+app.template_folder = "../templates/"
+app.static_folder = "../static/"
 
 @app.route("/")
-def welcomescreen():
+def welcome_screen():
     """Display the map
     """
-    m = folium.Map(location=[0, 0], zoom_start=12)
-    folium.Marker(
-    [0, 0], 
-    popup="<i>Point Némo</i>", 
-    tooltip="Click here !",
-    icon=folium.Icon(color="blue", prefix="fa", icon="anchor")
-    ).add_to(m)
-    return m.get_root().render()
+    return render_template("welcome.html")
+
+@app.route("/level")
+def select_level_screen():
+    """Display the map
+    """
+    return render_template("select_level.html")
 
 @app.route("/dev/level/<lvl>")
-def devlvlscreen(lvl):
+def dev_level_screen(lvl):
     """Display the map
     """
     data = read_src.read_lvl_data(lvl)
@@ -49,7 +50,7 @@ def devlvlscreen(lvl):
     return m.get_root().render()
 
 @app.route('/level/<lvl>')
-def lvl_screen(lvl):
+def level_screen(lvl):
     data = read_src.read_lvl_data(lvl)
     rand_mark_loc = services.compute_rand_loc(data)
     m = folium.Map(location=data["start_loc"], zoom_start=data["zoom"])

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loc and Kiss</title>
+  <style>
+    /* Reset */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    /* Body */
+    body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('/static/background_welcome.jpg');
+    background-size: cover;
+    }
+
+    /* Container */
+    .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    }
+
+    /* Header */
+    .header {
+    text-align: center;
+    margin-top: 50px;
+    }
+
+    .header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    margin-bottom: 20px;
+    }
+
+    .header h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    margin-bottom: 50px;
+    }
+
+    /* Levels */
+    .levels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+
+    .levels a {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    }
+
+    .levels a:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .level-icon {
+        background-image: none;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin: 0 auto;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+    .level-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    }
+
+    .level-name {
+    background-color: #fff;
+    }
+
+    .level-name h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ff5c5c;
+    }
+    .level-name h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    }
+    .level-name p {
+    font-size: 20px;
+    font-weight: 650;
+    color: #f6a6a6;
+    }
+    .level-name button {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ff5c5c;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+      
+      .level-name button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+        background-color: #ff7f7f;
+      }
+      
+      .level-name button:focus {
+        outline: none;
+        box-shadow: none;
+      }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Loc and Kiss</h1>
+      <h2>Select Your Level</h2>
+    </div>
+    <div class="levels">
+      <a href="/level/1" class="level-icon" style="background-image: url('static/lvl1_image.jpg')">
+        <div class="level-name">
+            <h3>Level 1:</h3> <p>Paris intramuros</p>
+        </div>
+      </a>
+      <a href="/level/2" class="level-icon" style="background-image: url('static/lvl2_image.jpg')">
+        <div class="level-name">
+            <h3>Level 2:</h3> <p>Grand Paris</p>
+        </div>
+      </a>
+      <a href="/level/3" class="level-icon" style="background-image: url('static/lvl3_image.jpg')">
+        <div class="level-name">
+            <h3>Level 3:</h3> <p>Ile de France</p>
+        </div>
+      </a>
+      <a href="/level/4" class="level-icon" style="background-image: url('static/lvl4_image.jpg')">
+        <div class="level-name">
+            <h3>Level 4:</h3> <p>France</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
