@@ -1,6 +1,6 @@
 import json
 
-path = "../../src/levels-limits"
+path_data = "../data/levels-data"
 
 def read_lvl_data(lvl):
     """The data is stored in the .txt file as followed: lat, lon, size
@@ -12,6 +12,6 @@ def read_lvl_data(lvl):
     Returns:
         list: [lat, lon, size]
     """
-    with open(path+f"/lvl{lvl}.json") as file:
+    with open(path_data+f"/lvl{lvl}.json") as file:
         data = json.load(file)
     return data
