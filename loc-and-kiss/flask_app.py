@@ -64,4 +64,4 @@ def level_screen(lvl):
     return m.get_root().render()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0')

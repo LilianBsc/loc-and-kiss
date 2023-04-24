@@ -8,5 +8,6 @@
 ## Features and to do in the future
 - Send the address by email or else
 - Put it on a GitHub server so it can be access from anywhere
+- Rules readable
 
 Author: LilianBsc
