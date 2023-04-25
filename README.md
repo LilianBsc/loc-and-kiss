@@ -9,5 +9,8 @@
 - Send the address by email or else
 - Put it on a GitHub server so it can be access from anywhere
 - Rules readable
+- Save the previous location in a BDD
+- Loc the next level according to rules
+- Login
 
 Author: LilianBsc
