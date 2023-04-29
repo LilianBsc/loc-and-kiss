@@ -60,8 +60,15 @@ def level_screen(lvl):
     tooltip="Kiss here!",
     icon=folium.Icon(color="pink", prefix="fa", icon="face-kiss-wink-heart")
     ).add_to(m)
-
     return m.get_root().render()
+
+@app.route('/login')
+def login():
+    return render_template("login.html")
+
+@app.route('/signup')
+def singup():
+    return render_template("signup.html")
 
 if __name__ == "__main__":
     app.run(debug=False, host='0.0.0.0')

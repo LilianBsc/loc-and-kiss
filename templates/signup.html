@@ -7,7 +7,7 @@
     <style>
       /* Styles for the page */
       body {
-        background-image: url('static/background_welcome4.jpg');
+        background-image: url('static/background_welcome1.jpg');
         background-size: cover;
         background-position: center center;
         font-family: Arial, sans-serif;
@@ -32,21 +32,41 @@
         text-shadow: 2px 2px #000;
       }
       
-      h2 {
-        color: #fff;
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
+      form {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        margin: 2rem 0;
+        padding: 2rem;
         text-align: center;
         width: 50%;
       }
       
+      label {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        text-align: left;
+      }
+      
+      input {
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      
       .btn {
-        background-color: #fff;
+        background-color: #ff69b4;
         border: none;
         border-radius: 25px;
-        color: #ff69b4;
+        color: #fff;
         cursor: pointer;
         font-size: 1.5rem;
+        margin-top: 1rem;
         padding: 1rem 2rem;
         text-align: center;
         text-decoration: none;
@@ -55,17 +75,24 @@
       }
       
       .btn:hover {
-        background-color: #ff69b4;
-        color: #fff;
+        background-color: #fff;
+        color: #ff69b4;
       }
     </style>
   </head>
   <body>
     <div class="overlay">
       <h1>Loc and Kiss</h1>
-      <h2>Travel the world while kissing with your loved one.</h2>
-      <a href="login" class="btn">Log In</a>
-      <p>No account ? <a href="signup" class="p">Sign Up</a></p>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="login" class="p">Log In</a></p>
     </div>
   </body>
 </html>
