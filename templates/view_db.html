@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loc and Kiss</title>
+    <style>
+      /* Styles pour l'interface de dev */
+    body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    }
+
+    h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    }
+
+    h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    }
+
+    h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    }
+
+    button {
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+    background-color: #3e8e41;
+    }
+
+    input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    }
+
+    label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+    }
+
+    select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    }
+
+    textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    }
+    </style>
+    <body>
+        <h1>My Table</h1>
+        <table>
+        <tr>
+            <th>Id</th>
+            <th>Repr</th>
+        </tr>
+        {% for key, value in table_dict.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>
