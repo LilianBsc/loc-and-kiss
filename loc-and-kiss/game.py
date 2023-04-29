@@ -13,29 +13,26 @@
     And then head to http://127.0.0.1:5000/ in your browser to see the map displayed
 
 """
-
-from flask import Flask, render_template
-import services
+from flask import Blueprint, render_template
 import folium
-import read_src
+import read_map, read_src, services
+from init import db
 
-app = Flask(__name__)
-app.template_folder = "../templates/"
-app.static_folder = "../static/"
+game = Blueprint('game', __name__)
 
-@app.route("/")
+@game.route("/")
 def welcome_screen():
     """Display the map
     """
     return render_template("welcome.html")
 
-@app.route("/level")
+@game.route("/level")
 def select_level_screen():
     """Display the map
     """
     return render_template("select_level.html")
 
-@app.route("/dev/level/<lvl>")
+@game.route("/dev/level/<lvl>")
 def dev_level_screen(lvl):
     """Display the map
     """
@@ -49,7 +46,7 @@ def dev_level_screen(lvl):
     folium.PolyLine(trail_coordinates, tooltip="Random box").add_to(m)
     return m.get_root().render()
 
-@app.route('/level/<lvl>')
+@game.route('/level/<lvl>')
 def level_screen(lvl):
     data = read_src.read_lvl_data(lvl)
     rand_mark_loc = services.compute_rand_loc(data)
@@ -62,13 +59,6 @@ def level_screen(lvl):
     ).add_to(m)
     return m.get_root().render()
 
-@app.route('/login')
-def login():
-    return render_template("login.html")
-
-@app.route('/signup')
-def singup():
-    return render_template("signup.html")
-
-if __name__ == "__main__":
-    app.run(debug=False, host='0.0.0.0')
+@game.route('/profile')
+def profile():
+    return render_template("profile.html")
