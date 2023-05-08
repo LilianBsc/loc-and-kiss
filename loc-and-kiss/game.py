@@ -45,7 +45,7 @@ def level_screen(lvl):
     new_loc = Loc(lattitude=rand_mark_loc[0], longitude=rand_mark_loc[1], user=current_user)
     db.session.add(new_loc)
     db.session.commit()
-    
+
     m = folium.Map(location=data["start_loc"], zoom_start=data["zoom"])
     folium.Marker(
     rand_mark_loc, 
@@ -55,3 +55,15 @@ def level_screen(lvl):
     ).add_to(m)
     return m.get_root().render()
 
+@game.route('/user-locs')
+@login_required
+def user_locs():
+    m = folium.Map(location=[46.7, 1.43027], zoom_start=5)
+    for loc in current_user.locs:
+        folium.Marker(
+        [loc.lattitude, loc.longitude], 
+        popup=f"<i>{round(loc.lattitude, 4)}N, {round(loc.longitude, 4)}E</i>", 
+        tooltip="Kiss here!",
+        icon=folium.Icon(color="pink", prefix="fa", icon="face-kiss-wink-heart")
+        ).add_to(m)
+    return m.get_root().render()
