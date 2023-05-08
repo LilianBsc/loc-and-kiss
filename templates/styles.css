@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loc and Kiss</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <style>
-    /* Styles for the page */
+/* Styles for the page */
 body {
 background-image: url('static/background_welcome4.jpg');
 background-size: cover;
@@ -60,13 +51,3 @@ transition: background-color 0.2s ease;
 background-color: #ff69b4;
 color: #fff;
 }
-  </style>
-  <body>
-    <div class="overlay">
-      <h1>Loc and Kiss</h1>
-      <h2>Travel the world while kissing with your loved one.</h2>
-      <a href="login" class="btn">Log In</a>
-      <p>No account ? <a href="signup" class="p">Sign Up</a></p>
-    </div>
-  </body>
-</html>

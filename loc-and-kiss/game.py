@@ -32,20 +32,6 @@ def select_level_screen():
     """
     return render_template("select_level.html")
 
-@game.route("/dev/level/<lvl>")
-def dev_level_screen(lvl):
-    """Display the map
-    """
-    data = read_src.read_lvl_data(lvl)
-    m = folium.Map(location=data["start_loc"], zoom_start=data["zoom"])
-    nw = (data["start_loc"][0] + data["random_box_size_lat"], data["start_loc"][1] - data["random_box_size_lon"])
-    ne = (data["start_loc"][0] + data["random_box_size_lat"], data["start_loc"][1] + data["random_box_size_lon"])
-    sw = (data["start_loc"][0] - data["random_box_size_lat"], data["start_loc"][1] - data["random_box_size_lon"])
-    se = (data["start_loc"][0] - data["random_box_size_lat"], data["start_loc"][1] + data["random_box_size_lon"])
-    trail_coordinates = [nw, ne, se, sw, nw]
-    folium.PolyLine(trail_coordinates, tooltip="Random box").add_to(m)
-    return m.get_root().render()
-
 @game.route('/level/<lvl>')
 def level_screen(lvl):
     data = read_src.read_lvl_data(lvl)
@@ -59,6 +45,3 @@ def level_screen(lvl):
     ).add_to(m)
     return m.get_root().render()
 
-@game.route('/profile')
-def profile():
-    return render_template("profile.html")

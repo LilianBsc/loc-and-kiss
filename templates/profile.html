@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loc and Kiss</title>
+    <title>My Profile</title>
     <style>
       /* Styles for the page */
+      /* Styles for the page */
       body {
-        background-image: url('static/background_welcome3.jpg');
+        background-image: url('static/background_profile.jpg');
         background-size: cover;
         background-position: center center;
         font-family: Arial, sans-serif;
@@ -18,26 +19,34 @@
       .overlay {
         background-color: rgba(255, 105, 180, 0.7);
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
         height: 100vh;
         width: 100%;
       }
-      
+
       h1 {
-        color: #fff;
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        text-shadow: 2px 2px #000;
+        color: #ffff;
+        font-size: 4rem;
+        margin: 2rem 0 1rem;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
       }
-      
+
       h2 {
         color: #fff;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         margin-bottom: 2rem;
         text-align: center;
         width: 50%;
+      }
+
+      p {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        text-align: center;
       }
       
       .btn {
@@ -46,25 +55,68 @@
         border-radius: 25px;
         color: #ff69b4;
         cursor: pointer;
-        font-size: 1.5rem;
-        padding: 1rem 2rem;
+        font-size: 1rem;
+        padding: 1rem 1rem;
         text-align: center;
         text-decoration: none;
         text-transform: uppercase;
         transition: background-color 0.2s ease;
+        margin: 1rem 1rem;
       }
       
       .btn:hover {
         background-color: #ff69b4;
         color: #fff;
       }
+      
+      .positions {
+        color: #fff;
+        font-size: 1.2rem;
+        margin: 2rem 0;
+        padding-left: 1.5rem;
+        text-align: left;
+        flex-basis: 50%;
+        flex-grow: 1;
+      }
+      
+      .achievements {
+        color: #fff;
+        font-size: 1.2rem;
+        margin: 2rem 0;
+        padding-left: 1.5rem;
+        text-align: left;
+        flex-basis: 50%;
+        flex-grow: 1;
+      }
+      
+      li {
+        margin-bottom: 0.5rem;
+      }
     </style>
   </head>
   <body>
     <div class="overlay">
-      <h1>Loc and Kiss</h1>
-      <h2>Welcome Agathe !</h2>
-      <a href="level" class="btn">Start Playing</a>
+      <h1>Welcome Back, {{name}}</h1>
+      <h2>Score: {{score}}</h2>
+      <div style="display: flex; width: 50%;">
+        <div class="positions">
+          <p>Positions:</p>
+          <ul>
+            <li>loc 1</li>
+            <li>loc 2</li>
+            <li>loc 3</li>
+          </ul>
+        </div>
+        <div class="achievements">
+        <p>Achievements:</p>
+          <ul>
+            <li>Explorer: Visit 10 different countries</li>
+            <li>Globetrotter: Visit 20 different countries</li>
+          </ul>
+        </div>
+      </div>
+      <a href="#" class="btn">Voir les précédentes locs</a>
+      <a href="level" class="btn">Start new game</a>
     </div>
   </body>
 </html>
