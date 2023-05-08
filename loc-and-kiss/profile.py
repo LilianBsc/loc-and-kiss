@@ -10,5 +10,7 @@ profile = Blueprint('profile', __name__)
 @profile.route('/profile')
 @login_required
 def see_profile():
-    score = 0
-    return render_template("profile.html", name=current_user.name, score=score)
+    return render_template("profile.html", 
+                           name=current_user.name, 
+                           score=current_user.score.score, 
+                           positions=current_user.locs)

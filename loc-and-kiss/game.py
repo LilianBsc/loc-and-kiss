@@ -17,6 +17,8 @@ from flask import Blueprint, render_template
 import folium
 import read_map, read_src, services
 from init import db
+from flask_login import login_required, current_user
+from models import Loc
 
 game = Blueprint('game', __name__)
 
@@ -27,15 +29,23 @@ def welcome_screen():
     return render_template("welcome.html")
 
 @game.route("/level")
+@login_required
 def select_level_screen():
     """Display the map
     """
     return render_template("select_level.html")
 
 @game.route('/level/<lvl>')
+@login_required
 def level_screen(lvl):
     data = read_src.read_lvl_data(lvl)
     rand_mark_loc = services.compute_rand_loc(data)
+
+    # Fill database
+    new_loc = Loc(lattitude=rand_mark_loc[0], longitude=rand_mark_loc[1], user=current_user)
+    db.session.add(new_loc)
+    db.session.commit()
+    
     m = folium.Map(location=data["start_loc"], zoom_start=data["zoom"])
     folium.Marker(
     rand_mark_loc, 

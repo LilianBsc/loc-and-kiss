@@ -102,9 +102,9 @@
         <div class="positions">
           <p>Positions:</p>
           <ul>
-            <li>loc 1</li>
-            <li>loc 2</li>
-            <li>loc 3</li>
+            {% for pos in positions %}
+              <li>{{pos.lattitude}}, {{pos.longitude}}</li>
+            {% endfor %}
           </ul>
         </div>
         <div class="achievements">
